@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {Button, Typography} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  helloWorldStyle: {
+    fontStyle: 'oblique',
+    color:"red",
+    fontSize:"30px"
+  },
+  buttonStyles:{
+    color:'green'
+  }
+});
 
 function App() {
+  const classes=useStyles();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Typography className={classes.helloWorldStyle} color="primary" variant="h1">Hello World!</Typography>
+      <Button className={classes.buttonStyles}  color="secondary" variant="outlined">Click here</Button>
     </div>
   );
 }
